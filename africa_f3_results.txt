@@ -1,0 +1,40 @@
+qp3Pop: parameter file: par.africa
+### THE INPUT PARAMETERS
+##PARAMETER NAME: VALUE
+genotypename: sparrow_fixed.geno
+snpname: sparrow_fixed.snp
+indivname: sparrow_fixed.ind
+popfilename: list_africa_tests.txt
+inbreed: YES
+## qp3Pop version: 651
+inbreed set YES
+number of triples 24
+nplist: 24
+snps: 1621372
+number of blocks for block jackknife: 31
+                      Source 1             Source 2               Target           f_3       std. err           Z    SNPs
+ result:                Norway                India          SouthAfrica      0.119304       0.003615      33.006 1304550
+ result:                Norway                India              Senegal      0.054884       0.003584      15.315 1227780
+ result:                Norway                India               Gambia      0.063570       0.002301      27.630 1263733
+  no data               Norway                India                Kenya      0.000000      -1.000000      -0.000      -1
+ result:                Norway                India            CapeVerde      0.076034       0.002505      30.348 1300207
+ result:                Norway                India           Madagascar      0.162163       0.004364      37.159 1036396
+ result:                Norway                 Iran          SouthAfrica      0.174925       0.004427      39.513 1160147
+ result:                Norway                 Iran              Senegal      0.086689       0.004314      20.096 1069628
+ result:                Norway                 Iran               Gambia      0.097133       0.002797      34.730 1101365
+  no data               Norway                 Iran                Kenya      0.000000      -1.000000      -0.000      -1
+ result:                Norway                 Iran            CapeVerde      0.073093       0.002364      30.916 1127195
+ result:                Norway                 Iran           Madagascar      0.218132       0.004953      44.040  912635
+ result:                Norway                Italy          SouthAfrica      0.258709       0.005903      43.827 1240030
+ result:                Norway                Italy              Senegal      0.134973       0.005542      24.353 1124221
+ result:                Norway                Italy               Gambia      0.147695       0.003750      39.382 1158825
+  no data               Norway                Italy                Kenya      0.000000      -1.000000      -0.000      -1
+ result:                Norway                Italy            CapeVerde      0.050809       0.002247      22.611 1171264
+ result:                Norway                Italy           Madagascar      0.306601       0.006463      47.441  968628
+ result:                 Italy                India          SouthAfrica      0.111562       0.003472      32.134 1342097
+ result:                 Italy                India              Senegal      0.043534       0.003706      11.746 1266237
+ result:                 Italy                India               Gambia      0.051812       0.002414      21.467 1306740
+  no data                Italy                India                Kenya      0.000000      -1.000000      -0.000      -1
+ result:                 Italy                India            CapeVerde      0.032153       0.002951      10.897 1341855
+ result:                 Italy                India           Madagascar      0.158417       0.004407      35.950 1062740
+##end of qp3Pop:      157.283 seconds cpu      998.699 Mbytes in use

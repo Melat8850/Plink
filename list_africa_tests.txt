@@ -1,0 +1,27 @@
+Norway India SouthAfrica
+Norway India Senegal
+Norway India Gambia
+Norway India Kenya
+Norway India CapeVerde
+Norway India Madagascar
+
+Norway Iran SouthAfrica
+Norway Iran Senegal
+Norway Iran Gambia
+Norway Iran Kenya
+Norway Iran CapeVerde
+Norway Iran Madagascar
+
+Norway Italy SouthAfrica
+Norway Italy Senegal
+Norway Italy Gambia
+Norway Italy Kenya
+Norway Italy CapeVerde
+Norway Italy Madagascar
+
+Italy India SouthAfrica
+Italy India Senegal
+Italy India Gambia
+Italy India Kenya
+Italy India CapeVerde
+Italy India Madagascar
