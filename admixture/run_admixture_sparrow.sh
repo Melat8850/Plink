@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# ADMIN
+#SBATCH --job-name=admixture
+#SBATCH --output=SLURM-%j-%x.out
+#SBATCH --error=SLURM-%j-%x.err
+#SBATCH --account=nn10082k
+#
+# RESOURCE ALLOCATION
+#SBATCH --nodes=1
+#SBATCH --tasks=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=4G
+#SBATCH --time=01:00:00
+
+# User definitions
+PLINK_PARENT_DIR="/cluster/work/users/melatag/genotyping_pipeline/output/plink"
+INPUT_BFILES_NAME=sparrow_Iransamples_balanced
+K_MIN=2
+K_MAX=5
+CPUS_PER_TASK=1
+
+# Prepare environment
+set -o errexit
+set -o nounset
+module --quiet purge
+
+# Load modules
+module load ADMIXTURE/1.3.0
+module load PLINK/1.9b_6.13-x86_64
+module list
+
+# Work start
+echo "User definitions ..."
+echo "Input file set:" $INPUT_BFILES_NAME
+echo "K: from" $K_MIN "to" $K_MAX
+
+cd ${PLINK_PARENT_DIR}
+echo "Working in:" $PWD
+
+echo "Making subdirectory admixture ..."
+mkdir -p admixture
+mkdir -p admixture/.admixture_tmp
+
+echo "Parsing plink dataset and removing chromosomes names ..."
+cp ${INPUT_BFILES_NAME}.bed admixture/.admixture_tmp/${INPUT_BFILES_NAME}.admixture.bed
+cp ${INPUT_BFILES_NAME}.fam admixture/.admixture_tmp/${INPUT_BFILES_NAME}.admixture.fam
+awk '{$1="0";print $0}' ${INPUT_BFILES_NAME}.bim > admixture/.admixture_tmp/${INPUT_BFILES_NAME}.admixture.bim
+
+cd admixture
+
+echo "Running admixture ..."
+for K in $(seq ${K_MIN} ${K_MAX})
+do
+    admixture --cv -j$CPUS_PER_TASK .admixture_tmp/${INPUT_BFILES_NAME}.admixture.bed $K > ${INPUT_BFILES_NAME}_K${K}.out
+done
+
+echo "Collating CV errors ..."
+grep "CV" *.out | awk '{print $3,$4}' | cut -c 4,7-20 > ${INPUT_BFILES_NAME}.admixture.cv
+
+echo "Tidying up temporary files ..."
+rm -rv .admixture_tmp
+
+# Work end
