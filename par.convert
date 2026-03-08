@@ -1,0 +1,7 @@
+genotypename:    sparrow_fixed.bed
+snpname:         sparrow_fixed.bim
+indivname:       sparrow_fixed.fam
+outputformat:    EIGENSTRAT
+genotypeoutname: sparrow_fixed.geno
+snpoutname:      sparrow_fixed.snp
+indivoutname:    sparrow_fixed.ind
