@@ -1,0 +1,5 @@
+genotypename:   sparrow_fixed.geno
+snpname:        sparrow_fixed.snp
+indivname:      sparrow_fixed.ind
+popfilename:    list_africa_tests.txt
+inbreed:        YES
